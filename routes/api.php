@@ -20,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('login',[AuthController::class,'login']);
-Route::group(['middleware'=>'auth:sanctum'],function(){
+// Route::group(['middleware'=>'auth:sanctum'],function(){
     Route::resource('wisata', WisataController::class);
     Route::post('/wisata/{id}',[WisataController::class,'update']);
     Route::get('listWisata',[WisataController::class,'listWisata']);
-});
+// });
 
 
